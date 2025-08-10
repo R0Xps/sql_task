@@ -24,7 +24,7 @@ SELECT gs,
        ((gs - 1) % 50) + 1,
        'EmpFirst' || gs,
        'EmpLast' || gs,
-       (ARRAY['Chef','Waiter','Manager','Host'])[floor(random()*4 + 1)]
+       (ARRAY['VIPOrdersWaiter','StandardWaiter','AssistantWaiter'])[floor(random()*3 + 1)]
 FROM generate_series(1, 100) gs;
 
 -- 4) MENU ITEMS (1000 items)
