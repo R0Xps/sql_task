@@ -5,6 +5,7 @@ WITH OrdersCountByReservation AS (
     FROM Reservations r
     JOIN Orders o
     ON r.ReservationId = o.ReservationId
+    GROUP BY r.ReservationId
 )
 
 SELECT r.*
