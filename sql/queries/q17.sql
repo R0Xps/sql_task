@@ -67,12 +67,12 @@ EXPLAIN SELECT TotalOrders * Rank
 );
 
 -- 5. Query #15
-WITH FutureReservedTables AS (
-        SELECT RestaurantId, TableId, ReservationDate
-        FROM Reservations
-        WHERE ReservationDate > NOW()
-    )
-    SELECT r.RestaurantId, r.Name AS RestaurantName, frt.TableId, frt.ReservationDate
-    FROM Restaurants r
-    JOIN FutureReservedTables frt
-    ON r.RestaurantId = frt.RestaurantId
+EXPLAIN WITH FutureReservedTables AS (
+    SELECT RestaurantId, TableId, ReservationDate
+    FROM Reservations
+    WHERE ReservationDate > NOW()
+)
+SELECT r.RestaurantId, r.Name AS RestaurantName, frt.TableId, frt.ReservationDate
+FROM Restaurants r
+JOIN FutureReservedTables frt
+ON r.RestaurantId = frt.RestaurantId;
