@@ -1,5 +1,5 @@
 -- 19. Query Plans Part2:
---     - Check the query plans for the 5 queries selected in Req #15 after adding some indexes.
+--     - Check the query plans for the 5 queries selected in Req #17 after adding some indexes.
 
 -- Index creation/deletion queries are in the sql/schema directory
 -- The following queries are the exact same as in q17.sql
